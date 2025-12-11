@@ -1,6 +1,8 @@
 defmodule Modulo do
-  def soma(1,1) do
+  def sum(1,1) do
     0
   end
-  def soma(a,b), do: a+b # Forma reduzida de criar funções
+  def sum(a,b), do: a+b # A simplified way of creating functions
+
+  def subtract(a, b, c \\ 1), do: a-b-c
 end
