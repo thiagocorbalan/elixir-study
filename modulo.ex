@@ -23,4 +23,11 @@ defmodule Modulo do
   end
   def hello(_), do: "Value is unknown"
 
+
+  def sum_for_all(list) do
+    ## fn x -> x + x end
+    ## &(&1 + &1)
+    Enum.map(list, &(&1 + &1))
+  end
+
 end
