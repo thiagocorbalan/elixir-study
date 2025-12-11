@@ -9,4 +9,18 @@ defmodule Modulo do
   defp show(arg) do
     "Value is: #{arg}"
   end
+
+  # def hello(names) do
+  #   "Hello " <> Enum.join(names, ", ")
+  # end
+
+  # guards
+  def hello(names) when is_list(names) do
+    "Olá " <> Enum.join(names, ", ");
+  end
+  def hello(name) when is_bitstring(name) do
+    "Olá #{name}";
+  end
+  def hello(_), do: "Value is unknown"
+
 end
