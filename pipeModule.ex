@@ -4,6 +4,7 @@ defmodule PipeModule do
   defp multiply(a, b), do: a * b
   defp divide(a, b), do: div(a,b)
 
+  @spec exec(integer, integer) :: String
   def exec(a, b) do
     # sum(multiply(divide(subtract(a,b),b), b), b)
 
