@@ -5,14 +5,8 @@ defmodule Elixir12 do
 
   @doc """
   Hello world.
-
-  ## Examples
-
-      iex> Elixir12.hello()
-      :world
-
   """
   def hello do
-    :world
+    Api.home()
   end
 end
