@@ -4,7 +4,10 @@ defmodule MyMOdule do
   """
 
   # importing Basic module
-  import Basic
+  import Basic # , only: [sum: 2]
+  # require Basic - pass to MOdule is required Basic module
+  # use Basic
+
 
   # by default is defined with last
   alias Types.Email
@@ -23,6 +26,9 @@ defmodule MyMOdule do
     # IO.inspect("Olá Mundo #{@const}")
 
     sum(5,4)
+      |> IO.inspect()
+
+    sub(10,5)
       |> IO.inspect()
 
     # only_in_module()
