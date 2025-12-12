@@ -2,6 +2,13 @@ defmodule MyMOdule do
   @moduledoc """
     My fisrt module
   """
+
+  # by default is defined with last
+  alias Types.Email
+
+  # with named alias
+  alias Types.Email, as: E_MAIL
+
   # public function
   @doc """
     My hello world function
@@ -9,7 +16,8 @@ defmodule MyMOdule do
   @const "my_constant"
 
   def hello_world() do
-    IO.puts("Olá Mundo #{@const}")
+    IO.inspect(%E_MAIL{})
+    IO.inspect("Olá Mundo #{@const}")
     only_in_module()
   end
 
