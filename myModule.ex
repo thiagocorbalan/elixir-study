@@ -3,6 +3,9 @@ defmodule MyMOdule do
     My fisrt module
   """
 
+  # importing Basic module
+  import Basic
+
   # by default is defined with last
   alias Types.Email
 
@@ -19,7 +22,7 @@ defmodule MyMOdule do
     IO.inspect(%E_MAIL{})
     # IO.inspect("Olá Mundo #{@const}")
 
-    Basic.sum(5,6)
+    sum(5,4)
       |> IO.inspect()
 
     # only_in_module()
