@@ -6,4 +6,6 @@ defmodule Basic do
   def sub(a,b) do
     a - b
   end
+
+  def send(msg), do: "Send message: #{msg}"
 end
