@@ -29,5 +29,4 @@ defmodule Modulo do
     ## &(&1 + &1)
     Enum.map(list, &(&1 + &1))
   end
-
 end
