@@ -17,8 +17,12 @@ defmodule MyMOdule do
 
   def hello_world() do
     IO.inspect(%E_MAIL{})
-    IO.inspect("Olá Mundo #{@const}")
-    only_in_module()
+    # IO.inspect("Olá Mundo #{@const}")
+
+    Basic.sum(5,6)
+      |> IO.inspect()
+
+    # only_in_module()
   end
 
   # private function
