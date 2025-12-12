@@ -2,7 +2,6 @@ defmodule MyMOdule do
   @moduledoc """
     My fisrt module
   """
-
   # public function
   @doc """
     My hello world function
