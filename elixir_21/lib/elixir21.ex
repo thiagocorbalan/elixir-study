@@ -15,7 +15,7 @@ defmodule Elixir21 do
 
 
   # Try and rescue
-  def try_save(atom) do
+  def try_rescue_test(atom) do
     try do
       :house = atom
     rescue
@@ -25,6 +25,16 @@ defmodule Elixir21 do
         error in MatchError -> false
     after
       IO.puts "Executando indepentende de acerto ou erro"
+    end
+  end
+
+  def try_catch_test(num \\ 3) do
+    try do
+      if num == 5, do: throw(" teste #{num}")
+      IO.puts("O número foi: #{num}")
+
+    catch
+      num -> "O valor errado foi #{num}"
     end
   end
 end
