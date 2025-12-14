@@ -37,6 +37,34 @@ defmodule Elixir21 do
       num -> "O valor errado foi #{num}"
     end
   end
+
+  # Start process
+  def proc do
+    # spawn start process
+    # spawn_link start process with trace to handle errors
+    pid = spawn_link fn ->
+      IO.inspect("Entrou no processo")
+      exit "Algum erro no meio do processo"
+      IO.inspect("Saindo normalment")
+    end
+
+    pid
+  end
+
+  defp sum({:ok, a},b), do: {:ok, a + b}
+
+  defp sub({:ok, _a}, _b), do: {:error, "não foi possível"}
+
+  defp mult({:ok, a},b), do: {:ok, a * b }
+  defp mult({:error, msg}, _b), do: {:error, msg }
+
+  def run(a, b) do
+
+    {:ok, a}
+      |> sum(b)
+      |> sub(b)
+      |> mult(b)
+  end
 end
 
 defmodule MyError do
