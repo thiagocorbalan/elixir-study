@@ -12,6 +12,21 @@ defmodule Elixir21 do
     end
     IO.puts("Um outra informação")
   end
+
+
+  # Try and rescue
+  def try_save(atom) do
+    try do
+      :house = atom
+    rescue
+      error ->
+        IO.inspect(error)
+        # IO.puts("de fato não são iguais")
+        error in MatchError -> false
+    after
+      IO.puts "Executando indepentende de acerto ou erro"
+    end
+  end
 end
 
 defmodule MyError do
