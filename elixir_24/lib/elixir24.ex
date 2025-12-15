@@ -4,7 +4,7 @@ defmodule Elixir24 do
   def init(state), do: {:ok, state}
 
   def start_link(state \\ []) do
-    GenServer.start_link(__MODULE__, state)
+    GenServer.start_link(__MODULE__, state, name: __MODULE__)
   end
 
   # sync function
@@ -22,8 +22,8 @@ defmodule Elixir24 do
   end
 
   ## public functions to avoid call GenServer directly as GenServer.call(pid, :items) or GenServer.call(pid, :retirar)
-  def mostrar(pid), do: GenServer.call(pid, :items);
-  def retirar(pid), do: GenServer.call(pid, :retirar);
-  def adicionar(pid, value), do: GenServer.cast(pid, {:adicionar, value});
+  def mostrar, do: GenServer.call(__MODULE__, :items);
+  def retirar, do: GenServer.call(__MODULE__, :retirar);
+  def adicionar(value), do: GenServer.cast(__MODULE__, {:adicionar, value});
 
 end
